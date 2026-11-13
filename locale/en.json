@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Omega Proxy",
+    "description": "Switch proxy profiles per workspace and provider; shell, terminal and model requests follow the active profile.",
+    "detail": "README.md"
+  }
+}

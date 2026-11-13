@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Omega 代理",
+    "description": "按工作区与 provider 切换代理分流；shell、终端与模型请求都跟随当前配置。",
+    "detail": "README.zh.md"
+  }
+}

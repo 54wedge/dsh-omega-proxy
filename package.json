@@ -1,0 +1,58 @@
+{
+  "name": "dsh-omega-proxy",
+  "version": "0.1.0",
+  "private": false,
+  "description": "ZeroOmega-style proxy switching for DeepSeek Harness: per-workspace, per-provider and per-plugin routing",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "proxy",
+    "zeroomega"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "src/host/*.js",
+    "src/client/*.js",
+    "scripts/build-client.mjs",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "README.zh.md",
+    "ARCHITECTURE.md",
+    "AGENTS.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "check": "node --check index.js && node --check client.js && node scripts/build-client.mjs --check"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "dependencies": {
+    "jsdom": "^31.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
